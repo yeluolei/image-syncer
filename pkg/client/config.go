@@ -53,7 +53,7 @@ func NewSyncConfig(configFile, authFilePath, imageFilePath string,
 				return nil, fmt.Errorf("decode auth file %v error: %v", authFilePath, err)
 			}
 		}
-		config.AuthList = expandEnv(config.AuthList)
+		// config.AuthList = expandEnv(config.AuthList)
 
 		if err := openAndDecode(imageFilePath, &config.ImageList); err != nil {
 			return nil, fmt.Errorf("decode image file %v error: %v", imageFilePath, err)
